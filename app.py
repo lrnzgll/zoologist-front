@@ -42,5 +42,5 @@ params = {
 
 if st.button('Predict penguin class'):
     response = requests.get(api_url, params)
-    prediction = response.json()['prediction']
+    prediction = response.json()
     st.write("The predicted penguin class is", prediction)
