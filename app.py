@@ -29,7 +29,7 @@ sex = st.radio('Select an Island', ('Male', 'Female'))
 
 st.write(sex)
 
-api_url = "http://localhost:8001/predict"
+api_url = st.secrets['API_URL']
 
 params = {
     "island": island,
@@ -39,7 +39,6 @@ params = {
     "body_mass_g": body_mass,
     "sex": sex
 }
-
 
 if st.button('Predict penguin class'):
     response = requests.get(api_url, params)
